@@ -1,0 +1,36 @@
+when we use pip we basically access it from Pypi
+We will create a package for Module 2 Excel to PDF Generator
+
+A library can be a package (externally installed, multiple files) or a module (local, usually 1 file)
+
+For a code to become a package it must be written in OOP or functional programming principles because users who import it will look for functions or classes
+
+rename main.py to more meaningful name based on what it does
+
+def generate()
+
+allow defining path for excel and storing pdfs and image
+def generate(excel_input_path, pdf_output_path, image_output_path)
+
+replace all excel paths with excel input path argument
+replace all image paths with image output path argument
+replace all pdf paths with pdf output path argument. use os.makedirs(pdf_output_path) in "if not os.path.exists(pdf_output_path)" to make sure the path exists or is created
+
+They should also be able to define column names
+def generate(excel_input_path, pdf_output_path, image_output_path, column names seperated by comma)
+
+be sure to assign these variables to where ever they are hard coded in the code.
+
+Note: We can use kwargs for defining column names, because the user may have less or more columns
+
+Add a docstring to describe how the function operates
+
+
+
+
+
+to test, create another python file and import the invoice module then use invoice.generate
+
+if the testing is successful, convert it to package
+Package is usually a directory with multiple modules files, so in our case it can be excel to pdf and excel to html and excel to png. the directory should also have a __init__.py file
+
