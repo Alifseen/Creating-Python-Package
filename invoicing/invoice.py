@@ -5,7 +5,18 @@ from pathlib import Path
 import os
 
 def generate(excel_path, pdf_path, image_path, id_column, name_column, qty_column, unit_price_column, total_price_column):
-
+    """
+    This program converts an excel invoice into a pdf invoice
+    :param excel_path:
+    :param pdf_path:
+    :param image_path:
+    :param id_column:
+    :param name_column:
+    :param qty_column:
+    :param unit_price_column:
+    :param total_price_column:
+    :return:
+    """
     filepaths = glob.glob(f"{excel_path}/*.xlsx")
 
     for filepath in filepaths:
