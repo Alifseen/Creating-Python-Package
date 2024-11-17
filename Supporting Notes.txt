@@ -34,3 +34,41 @@ to test, create another python file and import the invoice module then use invoi
 if the testing is successful, convert it to package
 Package is usually a directory with multiple modules files, so in our case it can be excel to pdf and excel to html and excel to png. the directory should also have a __init__.py file
 
+
+
+
+
+create a setup.py in the same directory as invoicing package folder
+It specifies the parameters of the package
+
+from setuptools import setup
+
+setup(
+name (make sure there is no oother package with that name)
+packages (this takes a list of direcotires in case there are multiple packages. Also, you can use this name with "import" command)
+version
+license = MIT (free llicense)
+description
+author
+authoer_email
+url
+keywords  (this is a list of keywords that can be used to search for this package)
+install_requires (list of libraries this package depends on)
+classifiers (list of metadata)
+)
+
+Create Dist
+Go to terminal and type python setup.py sdist
+This will create a distribution package that will be uploaded to Pypi (python package index)
+
+Upload
+pip install twine
+then run this command twine upload --skip-existing dist/*
+This means upload everything except existing from the folder dist
+You will be prompted to enter your user credentials for Pypi
+
+
+Changing Packages
+If you want to change code, you have to upload again. But first change the version number in setup.py file and recreate the distribution.
+Version convention for 1.0.0 is 1.0.1 for a bug fix, 1.1.0 for minor changes, 2.0.0 for major change
+upload again using the same twine commnad
